@@ -13,6 +13,7 @@
 		B5F1EBDE20EC9EF700A318C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5F1EBDC20EC9EF700A318C5 /* Main.storyboard */; };
 		B5F1EBE020EC9F0A00A318C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5F1EBDF20EC9F0A00A318C5 /* Assets.xcassets */; };
 		B5F1EBE320EC9F0A00A318C5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5F1EBE120EC9F0A00A318C5 /* LaunchScreen.storyboard */; };
+		B5F1EBEC20ECEB4400A318C5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B5F1EBEB20ECEB4400A318C5 /* GoogleService-Info.plist */; };
 		E2A5385D90B41D6468C73775 /* Pods_ARTraking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F1ACE49E9C2F05116009B4A /* Pods_ARTraking.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +28,8 @@
 		B5F1EBDF20EC9F0A00A318C5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B5F1EBE220EC9F0A00A318C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B5F1EBE420EC9F0A00A318C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B5F1EBEA20ECDB0400A318C5 /* ARTraking.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ARTraking.entitlements; sourceTree = "<group>"; };
+		B5F1EBEB20ECEB4400A318C5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EC8BCEEA942D05F556DA7A82 /* Pods-ARTraking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARTraking.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ARTraking/Pods-ARTraking.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -80,6 +83,8 @@
 		B5F1EBD520EC9EF700A318C5 /* ARTraking */ = {
 			isa = PBXGroup;
 			children = (
+				B5F1EBEB20ECEB4400A318C5 /* GoogleService-Info.plist */,
+				B5F1EBEA20ECDB0400A318C5 /* ARTraking.entitlements */,
 				B5F1EBD620EC9EF700A318C5 /* AppDelegate.swift */,
 				B5F1EBD820EC9EF700A318C5 /* MasterViewController.swift */,
 				B5F1EBDA20EC9EF700A318C5 /* DetailViewController.swift */,
@@ -102,6 +107,7 @@
 				B5F1EBCF20EC9EF700A318C5 /* Sources */,
 				B5F1EBD020EC9EF700A318C5 /* Frameworks */,
 				B5F1EBD120EC9EF700A318C5 /* Resources */,
+				454512A0491EE40C40A9D3E9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -124,6 +130,14 @@
 				TargetAttributes = {
 					B5F1EBD220EC9EF700A318C5 = {
 						CreatedOnToolsVersion = 10.0;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -151,6 +165,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5F1EBE320EC9F0A00A318C5 /* LaunchScreen.storyboard in Resources */,
+				B5F1EBEC20ECEB4400A318C5 /* GoogleService-Info.plist in Resources */,
 				B5F1EBE020EC9F0A00A318C5 /* Assets.xcassets in Resources */,
 				B5F1EBDE20EC9EF700A318C5 /* Main.storyboard in Resources */,
 			);
@@ -159,6 +174,36 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		454512A0491EE40C40A9D3E9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ARTraking/Pods-ARTraking-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/CountryPickerSwift/CountryPicker.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/PhoneNumberKit/PhoneNumberKit.framework",
+				"${BUILT_PRODUCTS_DIR}/PhoneVerificationController/PhoneVerificationController.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CountryPicker.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PhoneNumberKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PhoneVerificationController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ARTraking/Pods-ARTraking-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		967B4FFD61D7210A74EEB7A2 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -331,15 +376,18 @@
 			baseConfigurationReference = EC8BCEEA942D05F556DA7A82 /* Pods-ARTraking.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_ENTITLEMENTS = ARTraking/ARTraking.entitlements;
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = JT5V4QYX9D;
 				INFOPLIST_FILE = ARTraking/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = softweb.ARTraking;
+				PRODUCT_BUNDLE_IDENTIFIER = com.softwebsolutions.icloude;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "9fc8adde-ea99-4a6f-93c9-37f809aab46f";
+				PROVISIONING_PROFILE_SPECIFIER = "Development Push test profile - 2017";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -350,15 +398,18 @@
 			baseConfigurationReference = 1EF8D8FECF701F5CC2AC1ED7 /* Pods-ARTraking.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_ENTITLEMENTS = ARTraking/ARTraking.entitlements;
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = JT5V4QYX9D;
 				INFOPLIST_FILE = ARTraking/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = softweb.ARTraking;
+				PRODUCT_BUNDLE_IDENTIFIER = com.softwebsolutions.icloude;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "9fc8adde-ea99-4a6f-93c9-37f809aab46f";
+				PROVISIONING_PROFILE_SPECIFIER = "Development Push test profile - 2017";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

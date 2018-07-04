@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import FirebaseAuth
+import PhoneVerificationController
 
 class MasterViewController: UITableViewController {
 
@@ -23,6 +25,22 @@ class MasterViewController: UITableViewController {
             let controllers = split.viewControllers
             detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
         }
+        
+        let configuration = Configuration(requestCode: { phone, completion in
+            PhoneAuthProvider.provider().verifyPhoneNumber("+919974046660", completion: completion)
+        }, signIn: { verificationID, verificationCode, completion in
+            let credential = PhoneAuthProvider.provider().credential(withVerificationID: verificationID, verificationCode: verificationCode)
+            Auth.auth().signIn(with: credential) { _, error in completion(error) }
+        })
+        let vc = PhoneVerificationController(configuration: configuration)
+        vc.delegate = self
+        present(vc, animated: true)
+        
+        
+        
+        let verificationID = UserDefaults.standard.string(forKey: "authVerificationID")
+        
+
     }
 
     override func viewWillAppear(_ animated: Bool) {

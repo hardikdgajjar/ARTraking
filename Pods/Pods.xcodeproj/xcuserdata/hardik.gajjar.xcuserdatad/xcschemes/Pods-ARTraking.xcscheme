@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9D0B4AC69E64A764ED5C2385B1A66E3C"
+               BlueprintIdentifier = "E48F07C33857DE1E65FE7638960587F1"
                BuildableName = "Pods_ARTraking.framework"
                BlueprintName = "Pods-ARTraking"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9D0B4AC69E64A764ED5C2385B1A66E3C"
+            BlueprintIdentifier = "E48F07C33857DE1E65FE7638960587F1"
             BuildableName = "Pods_ARTraking.framework"
             BlueprintName = "Pods-ARTraking"
             ReferencedContainer = "container:Pods.xcodeproj">

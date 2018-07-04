@@ -141,6 +141,25 @@ strip_invalid_archs() {
   STRIP_BINARY_RETVAL=1
 }
 
+
+if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/CountryPickerSwift/CountryPicker.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/PhoneNumberKit/PhoneNumberKit.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/PhoneVerificationController/PhoneVerificationController.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework"
+fi
+if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/CountryPickerSwift/CountryPicker.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/PhoneNumberKit/PhoneNumberKit.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/PhoneVerificationController/PhoneVerificationController.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework"
+fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait
 fi
