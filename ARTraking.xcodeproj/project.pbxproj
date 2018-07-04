@@ -13,9 +13,12 @@
 		B5F1EBDE20EC9EF700A318C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5F1EBDC20EC9EF700A318C5 /* Main.storyboard */; };
 		B5F1EBE020EC9F0A00A318C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5F1EBDF20EC9F0A00A318C5 /* Assets.xcassets */; };
 		B5F1EBE320EC9F0A00A318C5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5F1EBE120EC9F0A00A318C5 /* LaunchScreen.storyboard */; };
+		E2A5385D90B41D6468C73775 /* Pods_ARTraking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F1ACE49E9C2F05116009B4A /* Pods_ARTraking.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1EF8D8FECF701F5CC2AC1ED7 /* Pods-ARTraking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARTraking.release.xcconfig"; path = "Pods/Target Support Files/Pods-ARTraking/Pods-ARTraking.release.xcconfig"; sourceTree = "<group>"; };
+		3F1ACE49E9C2F05116009B4A /* Pods_ARTraking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ARTraking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5F1EBD320EC9EF700A318C5 /* ARTraking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARTraking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5F1EBD620EC9EF700A318C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B5F1EBD820EC9EF700A318C5 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +27,7 @@
 		B5F1EBDF20EC9F0A00A318C5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B5F1EBE220EC9F0A00A318C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B5F1EBE420EC9F0A00A318C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EC8BCEEA942D05F556DA7A82 /* Pods-ARTraking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARTraking.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ARTraking/Pods-ARTraking.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +35,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2A5385D90B41D6468C73775 /* Pods_ARTraking.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8CB8DFD8D3F4C8DFFF2FCE8B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EC8BCEEA942D05F556DA7A82 /* Pods-ARTraking.debug.xcconfig */,
+				1EF8D8FECF701F5CC2AC1ED7 /* Pods-ARTraking.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		9C0291085CBCB477D8DA00C4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3F1ACE49E9C2F05116009B4A /* Pods_ARTraking.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B5F1EBCA20EC9EF700A318C5 = {
 			isa = PBXGroup;
 			children = (
 				B5F1EBD520EC9EF700A318C5 /* ARTraking */,
 				B5F1EBD420EC9EF700A318C5 /* Products */,
+				8CB8DFD8D3F4C8DFFF2FCE8B /* Pods */,
+				9C0291085CBCB477D8DA00C4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,6 +98,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B5F1EBE720EC9F0A00A318C5 /* Build configuration list for PBXNativeTarget "ARTraking" */;
 			buildPhases = (
+				967B4FFD61D7210A74EEB7A2 /* [CP] Check Pods Manifest.lock */,
 				B5F1EBCF20EC9EF700A318C5 /* Sources */,
 				B5F1EBD020EC9EF700A318C5 /* Frameworks */,
 				B5F1EBD120EC9EF700A318C5 /* Resources */,
@@ -132,6 +157,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		967B4FFD61D7210A74EEB7A2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ARTraking-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B5F1EBCF20EC9EF700A318C5 /* Sources */ = {
@@ -282,6 +328,7 @@
 		};
 		B5F1EBE820EC9F0A00A318C5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EC8BCEEA942D05F556DA7A82 /* Pods-ARTraking.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -300,6 +347,7 @@
 		};
 		B5F1EBE920EC9F0A00A318C5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1EF8D8FECF701F5CC2AC1ED7 /* Pods-ARTraking.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
