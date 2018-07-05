@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 import FirebaseAuth
 import UserNotifications
-
+import FirebaseMessaging
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDelegate {
 
@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         
         if #available(iOS 10.0, *) {
             // For iOS 10 display notification (sent via APNS)
-            UNUserNotificationCenter.current().delegate = self as! UNUserNotificationCenterDelegate
+         //   UNUserNotificationCenter.current().delegate = self as? UNUserNotificationCenterDelegate
             
             let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
             UNUserNotificationCenter.current().requestAuthorization(
@@ -38,24 +38,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         
         application.registerForRemoteNotifications()
 
-        
+       
         let splitViewController = window!.rootViewController as! UISplitViewController
         let navigationController = splitViewController.viewControllers[splitViewController.viewControllers.count-1] as! UINavigationController
         navigationController.topViewController!.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem
         splitViewController.delegate = self
         
-        
-        PhoneAuthProvider.provider().verifyPhoneNumber("+919974046660", uiDelegate: nil) { (verificationID, error) in
-            if let error = error {
-                return
-            }
-            // Sign in using the verificationID and the code sent to the user
-            // ...
-            
-            UserDefaults.standard.set(verificationID, forKey: "authVerificationID")
-            
-            
-        }
+   
         return true
     }
 
@@ -96,7 +85,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         // Pass device token to auth
-       // Auth.auth().setAPNSToken(deviceToken, type: AuthAPNSTokenType.type)
+        //Auth.auth().setAPNSToken(deviceToken, type: AuthAPNSTokenType)
         
         // Further handling of the device token if needed by the app
         // ...
@@ -104,11 +93,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     func application(_ application: UIApplication,
                      didReceiveRemoteNotification notification: [AnyHashable : Any],
                      fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-//        if Auth.auth().canHandleNotification(notification) {
-//            completionHandler(UIBackgroundFetchResult)
-//            return
-//        }
+        if Auth.auth().canHandleNotification(notification) {
+            completionHandler(.noData)
+            return
+        }
         // This notification is not auth related, developer should handle it.
+       // handleNotification(notification)
     }
     
    

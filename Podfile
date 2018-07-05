@@ -7,7 +7,8 @@ target 'ARTraking' do
 pod 'Firebase/Auth'
 pod 'Firebase/Core'
 pod 'Firebase/Messaging'
-pod 'PhoneVerificationController'
+pod 'FirebaseUI/Phone'
+
   # Pods for ARTraking
 
 end

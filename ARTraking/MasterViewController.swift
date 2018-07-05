@@ -8,7 +8,7 @@
 
 import UIKit
 import FirebaseAuth
-import PhoneVerificationController
+
 
 class MasterViewController: UITableViewController {
 
@@ -25,21 +25,7 @@ class MasterViewController: UITableViewController {
             let controllers = split.viewControllers
             detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
         }
-        
-        let configuration = Configuration(requestCode: { phone, completion in
-            PhoneAuthProvider.provider().verifyPhoneNumber("+919974046660", completion: completion)
-        }, signIn: { verificationID, verificationCode, completion in
-            let credential = PhoneAuthProvider.provider().credential(withVerificationID: verificationID, verificationCode: verificationCode)
-            Auth.auth().signIn(with: credential) { _, error in completion(error) }
-        })
-        let vc = PhoneVerificationController(configuration: configuration)
-        vc.delegate = self
-        present(vc, animated: true)
-        
-        
-        
         let verificationID = UserDefaults.standard.string(forKey: "authVerificationID")
-        
 
     }
 
@@ -53,6 +39,18 @@ class MasterViewController: UITableViewController {
         objects.insert(NSDate(), at: 0)
         let indexPath = IndexPath(row: 0, section: 0)
         tableView.insertRows(at: [indexPath], with: .automatic)
+        
+        PhoneAuthProvider.provider().verifyPhoneNumber("+919879472423", uiDelegate: nil) { (verificationID, error) in
+            if let error = error {
+                return
+            }
+            // Sign in using the verificationID and the code sent to the user
+            // ...
+            
+            UserDefaults.standard.set(verificationID, forKey: "authVerificationID")
+            
+            
+        }
     }
 
     // MARK: - Segues
